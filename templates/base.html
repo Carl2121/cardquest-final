@@ -1,34 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    <meta 
+            name="viewport" 
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <title>{% block title %} Cardquest Master {% endblock %}</title>
-  </head>
-  <body>
+</head>
+<body>
     <!--NAVBAR-->
-    <section class="navbar">
-      <a href="{% static 'home.html' %}" class="btn" id="active"> Home </a>
-      <a href="{% static 'trainer.html' %}" class="btn"> Trainer </a>
-      <a href="{% static 'pokemon-card.html' %}" class="btn"> Pokemon Card </a>
-      <a href="{% static 'collection.html' %}" class="btn"> Collection </a>
-    </section>
+    {% include 'includes/nav-bar.html' %}
 
     <!--CONTENT-->
     <main>
-      {% block content %}
-
-      {% endblock%}
+        {% block content %}{% endblock%}
     </main>
-
-
-{% include 'includes/footer.html' %}
-  </body>
+    {% include 'includes/footer.html' %}
+</body>
 </html>
