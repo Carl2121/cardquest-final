@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Collection{% endblock title %}
+{% block content %}
+    <main>
+        <!--Trainers-->
+        <section class="collection-container">
+            <table class="styled-table">
+                {% for collection in collections %}<tr>
+                    <tr>
+                        <td>{{ collection.trainer }}</td>
+                        <td>{{ collection.card }}</td>
+                        <td>{{ collection.collection_date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </main>
+{% endblock content %}
